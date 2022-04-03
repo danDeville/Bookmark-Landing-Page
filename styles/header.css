@@ -35,7 +35,7 @@
 
 .navbar-menu {
   position: fixed;
-  left: 0px;
+  left: 100%;
   top: 0px;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,6 @@
   width: 100%;
   height: 100% ;
   overflow-y: auto;
-  padding: 20px 0;
   margin-right: 20px;
   list-style: none;
   background-color: rgba(37, 44, 69, .9);
@@ -108,7 +107,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .navbar-menu__social li {
@@ -126,18 +125,20 @@
 }
 
 .navbar-menu_visible {
-  left: 100%
+  left: 0%;
 }
+
 
 @media (min-width: 768px) {
   .navbar {
     height: 80px;
-    max-width: 1500px;
+    max-width: 1300px;
     margin: 0 auto;
   }
 
   .navbar-menu {
     width: 100%;
+    left: 0;
     position: relative;
     flex-direction: row;
     width: auto;
@@ -146,6 +147,7 @@
     padding: 0;
     background-color: transparent;
     overflow-x: auto;
+    margin-bottom: 0;
   }
 
   .navbar a {
@@ -160,6 +162,7 @@
     width: max-content;
     text-align: start;
     border-bottom: none;
+    line-height: 0;
   }
 
   .navbar-menu li button {
@@ -184,6 +187,3 @@
     display: none;
   }
 }
-
-
-
