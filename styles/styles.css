@@ -12,6 +12,10 @@
   --soft-red: hsl(0, 94%, 66%)
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Rubik', sans-serif;
   background-color: #fff;
@@ -24,6 +28,10 @@ main {
   margin-top: 80px;
 }
 
+section[id] {
+  scroll-margin-top: 80px;
+}
+
 .web-inner {
   width: 100%;
   max-width: 1300px;
@@ -33,6 +41,7 @@ main {
 }
 
 .hero {
+  position: relative;
   width: 100%;
   height: calc(100vh - 80px);
   display: flex;
@@ -88,7 +97,7 @@ main {
 .hero-image__background {
   z-index: -1;
   position: absolute;
-  bottom: -5%;
+  top: 12%;
   right: -20px;
   width: 85%;
   height: 220px;
@@ -102,11 +111,24 @@ main {
   margin-right: 16px;
 }
 
+.hero-info__buttons .bttn-primary:hover {
+  background-color: #fff;
+  color: var(--soft-blue);
+  border: 3px solid var(--soft-blue);
+}
+
 .hero-info__buttons .bttn-secondary {
   background-color: #fafafa;
   color: var(--very-dark-blue);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
 }
+
+.hero-info__buttons .bttn-secondary:hover {
+  background-color: #fff;
+  color: var(--very-dark-blue);
+  border: 3px solid var(--very-dark-blue);
+}
+
 
 .section-container {
   width: 100%;
@@ -128,6 +150,15 @@ main {
   width: 100%;
   max-width: 550px;
   margin: 0 auto
+}
+
+#nav-share-tab {
+  font-size: 1.125rem;
+  color: var(--grayish-blue);
+}
+
+#nav-share-tab:hover {
+  color: var(--soft-red);
 }
 
 .tab-content-container {
@@ -159,7 +190,7 @@ main {
   bottom: 0;
   top: 20%;
   left: -20px;
-  width: 95%;
+  width: 92%;
   height: 220px;
   background-color: var(--soft-blue);
   border-radius: 0 38% 38% 0;
@@ -172,8 +203,8 @@ main {
 }
 
 .tab-content__info h3 {
-  font-size: 1.8rem;
-  font-weight: 500;
+  font-size: 1.75rem;
+  font-weight: 600;
   margin-bottom: 24px;
   color: var(--very-dark-blue);
 }
@@ -198,7 +229,7 @@ main {
 }
 
 .card {
-  width: 300px;
+  width: 100%;
   height: 400px;
   border-radius: 10px!important;
   border: none!important;
@@ -260,16 +291,18 @@ main {
   display: flex;
 }
 
-.questions-container span{
+.questions-container a {
   width: 100%;
   height: 60px;
-}
-
-.questions-container span a {
   font-size: 1.25rem;
   color: var(--very-dark-blue);
   text-decoration: none;
 }
+
+.questions-container a:hover {
+  color: var(--soft-red)
+}
+
 
 .questions-container_respuesta {
   padding: 24px 0;
@@ -292,7 +325,7 @@ main {
 .footer {
   position: relative;
   width: 100%;
-  height: 470px;
+  height: 740px;
   background-color: var(--soft-blue);
 }
 
@@ -315,7 +348,7 @@ main {
 }
 
 .footer h2 {
-  font-size: 2.4rem;
+  font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 24px;
   color: #fff;
@@ -327,6 +360,41 @@ main {
   max-width: 550px;
   height: auto;
 }
+
+.form-control {
+  position: relative;
+  background-color: var(--soft-blue);
+  border: none;
+}
+
+.form-control input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.form-control.error input {
+	border-color: #e74c3c;
+}
+
+.form-control img {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+}
+
+.form-control small{
+  padding: 4px 8px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: var(--soft-red);
+  color: #fff;
+  border-radius: 0 0 4px 4px;
+}
+
+/* .form-control.error small {
+	visibility: visible;
+} */
 
 .footer input {
   width: 100%;
@@ -343,7 +411,7 @@ main {
 
 .footer button {
   width: 100%;
-  height: 50px;
+  height: 64px;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.3px;
@@ -353,16 +421,23 @@ main {
   color: #fff;
 }
 
+.footer button:hover {
+  background-color: #fff;
+  color: var(--soft-red);
+  border: 3px solid var(--soft-red);
+  border-radius: 5px;
+}
+
 .footer-nav {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 70px;
+  height: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: var(--very-dark-blue);
 }
 
@@ -372,15 +447,17 @@ main {
   max-width: 1300px;
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  padding: 40px 0;
   justify-content: space-between;
 }
 
 .footer-nav_link {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  margin-bottom: 24px;
 }
 .footer-nav img {
   width: auto;
@@ -394,7 +471,7 @@ main {
   margin-bottom: 0;
   list-style: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .footer-nav ul li {
@@ -407,15 +484,20 @@ main {
   text-transform: uppercase
 }
 
+.footer-nav ul li:hover {
+  color: var(--soft-red);
+}
+
 .footer-nav_social img {
   height: 30px
 }
 
+.footer-nav_social img:last-child {
+  margin-right: 0;
+}
+
 @media (min-width: 768px) {
   .hero {
-    width: 100%;
-    height: calc(100vh - 80px);
-    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -447,9 +529,11 @@ main {
   }
 
   .hero-image__background {
-    bottom: -5%;
-    right: -60%;
-    width: 130%;
+    top: 35%;
+    left: 64%;
+    /* bottom: 23%; */
+    position: absolute;
+    width: 70%;
     height: 380px;
   }
 
@@ -463,17 +547,74 @@ main {
   }
 
   .tab-content-container {
-    height: 600px
+    flex-flow: row;
+    text-align: left;
+    height: 600px;
+    width: 100%;
+  }
+
+  .tab-content-image {
+    width: 50%;
   }
 
   .feature-image__background {
-    bottom: -25%;
-    right: 35%;
-    width: 130%;
+    top: 45%;
+    left: -70%;
+    width: 150%;
     height: 350px;
   }
 
   .tab-content__info {
     width: 50%;
   }
+
+  .tab-content__info h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  .card {
+    width: 300px;
+  }
+
+  .footer {
+    height: 470px;
+  }
+
+  .footer h2 {
+    font-size: 2.4rem;
+  }
+
+  .footer-nav {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--very-dark-blue);
+    padding: 0 20px;
+  }
+
+  .footer-nav {
+    flex-direction: row
+  }
+
+  .footer-nav_info {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .footer-nav_link {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+
+.footer-nav_link ul {
+  flex-direction: row;
+}
 }
